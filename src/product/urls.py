@@ -12,7 +12,7 @@ app_name = "products"
 urlpatterns = [
 
     path('', product_list_view, name='product-list'),
-    path('create/', product_create_view, name='product-list'),
+    path('create/', product_create_view, name='product-create'),
     path('<int:id>/', product_datail_view, name='product_detail'),
     path('<int:id>/update', product_update_view, name='product-update'),
     path('<int:id>/delete/', product_delete_view, name='product-delete'),

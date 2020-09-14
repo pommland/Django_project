@@ -52,9 +52,19 @@ def loginPage(request):
 
 			if user is not None:
 				login(request, user)
-				return redirect('home')
+				# if user.is_authenticated() :
+				# 	return redirect('products:product-list')
+				if request.user.is_staff:
+					return redirect('/admin/auth/user/')
+
+				else: 
+					return redirect('products:product-list')
+
+                
 			else:
 				messages.info(request, 'Username OR password is incorrect')
+
+                
 
 		context = {}
 		return render(request, 'accounts/login.html', context)
@@ -62,3 +72,8 @@ def loginPage(request):
 def logoutUser(request):
 	logout(request)
 	return redirect('users:login')
+
+
+
+
+    

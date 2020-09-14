@@ -40,7 +40,7 @@ urlpatterns = [
     path('', home_view, name ="home"),
     path('contact/', contact_view),
     path('about/<int:id>/', about_view, name='product-detail'),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls,name ='admin'),
     # path('create/', product_create_view),
     # path('initial/', render_initial_data),
     # path('product/', product_datail_view),
