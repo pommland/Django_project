@@ -35,6 +35,7 @@ urlpatterns = [
 
 
 
+    path('users/', include('users.urls')),
     path('products/', include('product.urls')),
     path('', home_view, name ="home"),
     path('contact/', contact_view),
