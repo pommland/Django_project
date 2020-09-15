@@ -2,6 +2,13 @@
 
 {% block content %}
     <h1>Hello World!!</h1>
+    
+    <!-- {% if request.user.is_staff %} -->
+    <a href="/admin/auth/user/" class="button">Admin Page</a>
+    <a href="/products" class="button">products</a>
+    <!-- <a href="users/logout" class="button">Go to Google</a> -->
+    
+    <!-- {% endif %} -->
 
     <p>This is a Template</p>
 {% endblock %}

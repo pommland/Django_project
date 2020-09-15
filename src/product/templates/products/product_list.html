@@ -2,8 +2,16 @@
 
 {% block content %}
 
-{{request.user}}
+
+{% if request.user.is_staff %}
+<p>Status [Admin] : {{request.user}}  {{request.user.email}} </p>
+<a href="/products/create/" class="button">Create Product</a>
+
+{% else %}
+<p>Status [User] : {{request.user}}</p>
 {{request.user.email}}
+{% endif %}
+
 
 {% for instance in object_list %}
      <p>{{ instance.id }} - <a href="{{instance.get_absolute_url}}">  {{ instance.title }}</a> </p>

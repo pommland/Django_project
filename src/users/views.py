@@ -56,6 +56,7 @@ def loginPage(request):
 				# 	return redirect('products:product-list')
 				if request.user.is_staff:
 					return redirect('/admin/auth/user/')
+				
 
 				else: 
 					return redirect('products:product-list')
@@ -76,4 +77,3 @@ def logoutUser(request):
 
 
 
-    
