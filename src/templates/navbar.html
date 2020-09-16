@@ -1,9 +1,18 @@
 <nav>
     <ul>
-        <li>Brand</li>
-        <li>Contact</li>
-        <li>About</li>
+        {% if request.user.is_staff %}
+        <li>Status [Admin] : {{request.user}}  {{request.user.email}} </li>
+        {% else %}
+        <li>Status [User]  : {{request.user}}  {{request.user.email}} </li>
+        {% comment %} <li>About</li> {% endcomment %}
+{% comment %} {% if request.user.is_staff %}
+<p>Status [Admin] : {{request.user}}  {{request.user.email}} </p> {% endcomment %}
+{% comment %} <a href="/products/create/" class="button">Create Product</a> {% endcomment %}
+{% comment %} <a href="/ " class="button">home</a> {% endcomment %}
 
+{% comment %} <p>Status [User] : {{request.user}}</p> {% endcomment %}
+        {% comment %} {{request.user.email}} {% endcomment %}
+        {% endif %}
     </ul>
 
 </nav>
